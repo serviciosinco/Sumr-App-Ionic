@@ -1,0 +1,8 @@
+{
+  "name": "SUMR",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "844bc5fb"
+}
