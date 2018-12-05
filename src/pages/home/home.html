@@ -1,14 +1,25 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding="true" class="manual-ios-statusbar-padding LginCnt">
+  
+  <div class="spacer" style="width: 300px; height: 136px;"></div>
+  <div class="LginForm">
+    <figure class="LginLogo" ></figure>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list class="LginLst">
+
+      <ion-item class="LginItm">
+        <ion-label floating>Usuario</ion-label>
+        <ion-input class="LginTxtUs" id="LginTxtUs" type="text" [(ngModel)]="_user" ></ion-input>
+      </ion-item>
+    
+      <ion-item class="LginItm">
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input class="LginTxtPss" id="LginTxtPss" type="password" [(ngModel)]="_pss"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+
+    <button ion-button (click)="_Lgin();" block class="LginBtn">Ingresar</button>
+
+  </div>
+
 </ion-content>

@@ -1,0 +1,14 @@
+<ion-content padding class="LginCnt cards-bg">
+
+  <div class="spacer" style="width: 300px; height: 136px;"></div>
+  <ion-list>
+    <ion-item *ngFor="let _cl of _cl_ls">
+      <ion-avatar item-start>
+        <img src="{{ _cl.img.bg_s != '' && _cl.img.bg_s != null ? _cl.img.bg_s : _cl.img.bg  }}">
+      </ion-avatar>
+      <h2>CRM-SUMR</h2>
+      <p>{{ _cl.nm }}</p>
+      <button ion-button clear item-end (click)="_Cl_Clk( _cl )" >Ingresar</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
