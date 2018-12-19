@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { AlertController } from 'ionic-angular'; //Clase de alertas
 import { LoadingController } from 'ionic-angular'; //Clase de Loader
 
+import { Platform } from 'ionic-angular';
+
 /*
   Generated class for the FncProvider provider.
 
@@ -17,9 +19,19 @@ export class FncProvider {
   constructor(
               public http: HttpClient, 
               public alertCtrl: AlertController,
-              public loadingCtrl: LoadingController
+              public loadingCtrl: LoadingController,
+              public pltf: Platform
             ) {
 
+  }
+
+  //Validar el dispositivo Android/Ios
+  isPltf(p:string=null){
+    if( this.pltf.is(p) ){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   //Sistema de Loader

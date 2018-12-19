@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { CnxProvider } from './../../providers/cnx/cnx';  //Clase de ApiRest
 import { FncProvider } from '../../providers/fnc/fnc'; //Clase de funciones
 import { ClPage } from '../../pages/cl/cl'; //Clase cliente
@@ -16,10 +16,11 @@ export class HomePage {
 
   constructor(
               public navCtrl: NavController, 
+              public menuCtrl: MenuController,
               public __Rq: CnxProvider,
               public _fnc: FncProvider
             ) {
-              
+    this.menuCtrl.enable(false); //Desactiva el menú
   }
 
   _ChkLgin(p=null){
@@ -37,8 +38,8 @@ export class HomePage {
     this._fnc.showLdr();
 
     if( !this._fnc.isN(this._user) && !this._fnc.isN(this._pss) ){
-      this.__Rq._Rq_Get({ "_user":this._user, "_pss":this._pss }).subscribe(
-        (data) => { this._ChkLgin(data) },
+      this.__Rq._Rq_Get({ pml:"login", get:"&user="+this._user+"&pass="+this._pss }).subscribe(
+        (data) => { this._ChkLgin(data); },
         (error) => { console.log(error); }
       );
     }else{

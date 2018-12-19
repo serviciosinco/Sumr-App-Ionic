@@ -7,7 +7,19 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "app.servicios.in"
+    },
+    "cordova-plugin-cszbar": {
+      "PACKAGE_NAME": "app.servicios.in"
+    },
     "cordova-plugin-device": {
+      "PACKAGE_NAME": "app.servicios.in"
+    },
+    "cordova-plugin-documentreader": {
+      "PACKAGE_NAME": "app.servicios.in"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "app.servicios.in"
     },
     "cordova-plugin-ionic-keyboard": {
@@ -25,7 +37,15 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "app.servicios.in"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "app.servicios.in"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "app.servicios.in"
+    }
+  }
 }

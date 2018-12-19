@@ -1,5 +1,11 @@
 page-cl {
 
     .LginCnt{ background: url('../../assets/imgs/splash.png') no-repeat center;background-size:cover; }
-
+    
+    .item-md, .item-ios{
+        background-color:transparent;
+        p{
+            color: white;
+        }
+    }
 }

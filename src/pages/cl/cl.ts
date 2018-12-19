@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { FncProvider } from '../../providers/fnc/fnc'; //Clase de funciones
 import { MenuPage } from '../../pages/menu/menu'; //Clase de menú
 
@@ -21,9 +21,12 @@ export class ClPage {
   constructor(
               public navCtrl: NavController, 
               public navPrms: NavParams,
+              public menuCtrl: MenuController,
               public _fnc: FncProvider
             ) {
     
+    this.menuCtrl.enable(false); //Desactiva el menú
+
     //Listado de clientes - JSON
     try{
       if( !_fnc.isN(navPrms.data.length) ){
@@ -44,7 +47,7 @@ export class ClPage {
   //Selecciona el cliente
   _Cl_Clk(p=null){
     this._fnc.setSess({ k:"_cl", v:p  });
-    this.navCtrl.push(MenuPage, { "":"" });
+    this.navCtrl.push(MenuPage);
   }
 
   ionViewDidLoad() {

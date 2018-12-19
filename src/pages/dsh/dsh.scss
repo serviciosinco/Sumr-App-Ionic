@@ -1,3 +1,49 @@
 page-dsh {
+    
+    .toolbar-background {
+        //background: blue;
+    }
+
+    .toolbar-md, .toolbar-ios{
+        padding: 10px!important;
+    }
+
+    .toolbar-title{
+        color: white;
+    }
+
+    .slide-zoom {
+        height: 100%;
+    }
+
+    .slide-title {
+        margin-top: 2.8rem;
+    }
+
+    .slide-image {
+        max-height: 50%;
+        max-width: 60%;
+        margin: 18px 0;
+        margin-top: 50px;
+    }
+
+    b {
+        font-weight: 500;
+    }
+
+    
+    p {
+        padding: 0 40px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #60646B;
+        b {
+            color: #000000;
+        }
+    }
+
+    .bar-button-default-ios, .bar-button-default-md{
+        color: white!important;
+    }
 
 }
