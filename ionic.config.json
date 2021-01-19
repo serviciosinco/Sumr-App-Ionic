@@ -1,7 +1,8 @@
 {
-  "name": "Sumr-App",
+  "name": "SUMR",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
-  "type": "ionic-angular"
+  "type": "angular"
 }

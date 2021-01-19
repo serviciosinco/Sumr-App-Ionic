@@ -1,0 +1,202 @@
+ion-header{
+
+    text-align: left; border-bottom: 1px solid #93918f;
+
+    ion-title{
+        font-size: 1em; margin-left: 5px;
+        .title{  }
+        .subtitle{ font-size: 0.7em; margin: 0; display: block; color:var(--ion-color-medium-shade); }
+    }
+
+    ion-avatar{ 
+
+        width: 37px; height: 37px; min-width: 37px; min-height: 37px; background-color:var(--ion-color-medium-tint); float: left; overflow: hidden; margin-left: 5px; 
+        
+        figure{
+            background-size: auto 80%; background-repeat: no-repeat; background-position: center center; margin: 0; width: 37px; height: 37px;
+        }
+    }
+
+    ion-buttons{
+        ion-button.opt{ width: 37px; height: 37px; opacity: 0.4; background-repeat: no-repeat; background-position: center center; background-size: auto 70%; filter: grayscale(100%); --background-hover:transparent; }
+        ion-button.opt:hover{ opacity: 1; }
+    }
+}
+
+ion-header.whtsp{
+    ion-buttons{ 
+        ion-button.opt{ background-image: url("../../../assets/imgs/icons/chat_whtsp.svg"); }
+    }
+}
+ion-header.fb{
+    ion-buttons{ 
+        ion-button.opt{ background-image: url("../../../assets/imgs/icons/chat_fb.svg"); }
+    }
+}
+ion-header.ins{
+    ion-buttons{ 
+        ion-button.opt{ background-image: url("../../../assets/imgs/icons/chat_ins.svg"); }
+    }
+}
+ion-header.sumr{
+    ion-buttons{ 
+        ion-button.opt{ background-image: url("../../../assets/imgs/icons/chat_sumr.svg"); }
+    }
+}
+
+ion-content{
+
+    ion-grid{
+
+        z-index: 10; padding-top: 0px;
+
+        ion-row{
+
+            ion-col{
+
+                margin-top: 1px!important;
+                padding: 1px 0;
+                width: 100%; 
+
+                div.wrp{
+
+                    width: auto;
+                    display: inline-block;
+                    position: relative;
+                    border-radius:9px;
+                    -moz-border-radius:9px;
+                    -webkit-border-radius:9px;
+                    background-color: white; border: none; font-size:0.8em; padding:7px 10px;
+
+                    div.crnr{
+                        display: none; position: absolute; width: 15px; height: 15px; bottom:7px; background-size: auto 100%; background-repeat: no-repeat;
+                    }
+
+                    div.txt{
+                        display: inline-block;   
+                    }
+
+                    div.hour{
+                        font-size:0.7em; display: inline-block; color: #999; margin-left: 10px;
+                    }
+
+                }
+
+            }
+
+            ._msj_oth{  
+                text-align: left;
+                padding-left: 10px;
+                div.crnr{
+                    left: -13px; 
+                }    
+            }
+
+            ._msj_my{  
+                text-align: right;
+                padding-right: 10px;
+                div.crnr{
+                    right: -13px;
+                }
+            }
+
+            ion-col._glast{
+                padding-bottom: 15px!important; 
+                div.crnr{ display: block !important; }
+            }
+
+            ion-col._glast._msj_oth{ 
+                
+            }
+
+            ion-col._glast._msj_my{ 
+                
+            }
+
+        }
+    }
+}
+
+.cmain::before{ content:' '; position: fixed; left: 0; top: 0; width: 100%; height: 100%; --background: none; background-repeat: repeat;  background-size:366.5px 666px; opacity: .06; background-position: bottom center; }
+.cmain.whtsp{ --background: none; background-color: #e5ddd5; }
+.cmain.whtsp::before{ background-image: url('../../../assets/imgs/chat_back_whtsp.png'); }
+
+
+
+.cmain.whtsp ._msj_my div.wrp{ background-color: #dcf8c6; }
+.cmain.whtsp ._msj_my div.wrp div.crnr{ background-image: url('../../../assets/imgs/chat_whtsp_crnr_oth.svg'); }
+.cmain.whtsp ._msj_oth div.wrp{ background:#fff; text-align: right; }
+.cmain.whtsp ._msj_oth div.wrp div.crnr{ background-image: url('../../../assets/imgs/chat_whtsp_crnr_me.svg'); }
+
+.cmain.whtsp ._msj_my div.wrp .sts{ display: inline-block; margin-left: 4px; width: 10px; height: 10px; background-repeat: no-repeat;  background-size:10px; }
+.cmain.whtsp ._msj_my._msj_prc div.wrp .sts{ background-image:url('../../../assets/imgs/chat_whtsp_msj_prc.svg'); }
+.cmain.whtsp ._msj_my._msj_rdy div.wrp .sts{ background-image:url('../../../assets/imgs/chat_whtsp_msj_rdy.svg'); }
+
+.cmain.sumr{ --background: none; background-color: #eaeaea; }
+.cmain.sumr::before{ background-image: url('../../../assets/imgs/chat_back_sumr.png'); }
+
+.cmain.sumr ._msj_my div.wrp{ background-color: #5b6268; color:white; }
+.cmain.sumr ._msj_my div.wrp div.crnr{ background-image: url('../../../assets/imgs/chat_sumr_crnr_oth.svg'); }
+.cmain.sumr ._msj_oth div.wrp{ background:#fff; text-align: right; }
+.cmain.sumr ._msj_oth div.wrp div.crnr{ background-image: url('../../../assets/imgs/chat_sumr_crnr_me.svg'); }
+
+
+.cmain.fb ._msj_my div.wrp{ background-color: #0084ff; color:white; float: right; }
+.cmain.fb ._msj_oth div.wrp{ background:#f1f0f0; text-align: right; float: left; }
+
+
+ion-footer{
+
+    background-color: #efefef; padding: 10px 7px;
+
+    ion-toolbar{
+        --background: none; border: none;
+        
+        ion-textarea{
+            background-color: #fff; border-radius:15px; -moz-border-radius:15px; -webkit-border-radius:15px; --padding-end:10px; --padding-start:10px; font-size: 0.9em; 
+        }
+
+        ion-buttons{
+
+            margin-left: 10px;
+
+            ion-button{
+
+                background-color: #b5b6ba; border-radius:200px; -moz-border-radius:200px; -webkit-border-radius:200px;
+
+                ion-icon{
+                    color:white;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+
+
+ion-thumbnail.empty{
+    display: none; width: 100%; height: 200px; margin-top: 100px;
+    .d_img{ 
+        width: 150px; height: 150px; background-image: url("../../../assets/imgs/chat_empty.svg"); background-size: 90% auto; background-position: center; background-repeat: no-repeat; margin: auto; box-shadow: none !important; opacity: 0.4;
+        img{ border: none !important; box-shadow: none !important; }
+    }
+    ion-label{ 
+        text-align: center; font-family: 'Economica'; font-weight: bold; display: block; width: 100%; text-transform: uppercase; font-size: 20px; opacity: 0.5;
+        span{ font-weight: normal; display: block; width: 100%; font-size: 11px; }
+    }
+
+    ion-button{ 
+        text-align: center; font-family: 'Economica'; font-weight: 300; text-transform: uppercase; font-size: 13px; margin-top:20px; --background:none; border: 1px solid rgb(68, 68, 68); color: rgb(68, 68, 68); border-radius:9px; -moz-border-radius:9px; -webkit-border-radius:9px;
+    }
+}
+
+ion-thumbnail.empty.show{
+    display: block !important;
+}
+
+ion-refresher{
+    background-color: transparent !important;
+}

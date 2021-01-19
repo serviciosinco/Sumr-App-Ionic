@@ -1,0 +1,116 @@
+
+ion-header{ 
+    border-bottom: 1px solid #93918f; 
+    ion-buttons.opt{
+        ion-button{
+            width: 30px; height: 30px; background-repeat: no-repeat; background-position: center; background-size: auto 80%;
+        }
+        ion-button.sch{ 
+            background-image: url("../../../assets/imgs/icons/chat_sch.svg"); margin-right: 10px;
+        }
+        ion-button.new{ 
+            background-image: url("../../../assets/imgs/icons/chat_new.svg"); margin-right: 5px;
+        }
+    }
+}
+
+ion-grid.chnl{ 
+
+    padding-top:10px; padding-bottom: 10px; --background:none; background-color: #d7dfe2; 
+
+    ion-col{ 
+
+        text-align: center; 
+
+        div.opt{
+            
+            position: relative; margin: auto; padding:0; width: 27px; height: 27px; overflow: visible !important; background-repeat: no-repeat; background-position: center center; background-size: auto 100%; 
+
+            ion-badge{ --padding-bottom:4px; --padding-top:4px; --padding-start:3px; --padding-end:3px; font-size: 8px; font-weight: bolder; position: absolute; bottom: -4px; right: -4px; }
+            
+        }
+    }
+
+    ion-col.eml div.opt{ background-image: url("../../../assets/imgs/icons/chat_eml.svg"); background-size: auto 75%; }
+    ion-col.whtsp div.opt{ background-image: url("../../../assets/imgs/icons/chat_whtsp.svg"); }
+    ion-col.fb div.opt{ background-image: url("../../../assets/imgs/icons/chat_fb.svg"); }
+    ion-col.ins div.opt{ background-image: url("../../../assets/imgs/icons/chat_ins.svg"); }
+    ion-col.sumr div.opt{ border-radius: 200px; -moz-border-radius: 200px; -webkit-border-radius: 200px; }
+
+    ion-col:not(.active) div.opt{ filter: grayscale(100%)!important; opacity:0.4; }
+    ion-col:hover div.opt{ filter: grayscale(0%)!important; opacity:1; }
+    
+
+   
+}
+ 
+ion-grid.buy{ 
+    font-size: 0.8em; text-align: center; background-color: #caced1; 
+    //display: none;
+}
+
+ion-grid.buy.on{
+    display: block;
+}
+
+ion-list.cnv{ 
+
+    margin-top: 20px; margin-bottom: 100px;
+
+    ion-item{
+        
+        --inner-padding-top:15px; --inner-padding-bottom:15px; --padding-end:0px; --inner-padding-end:5px;
+
+        ion-avatar{
+
+            position: relative; 
+
+            .img{
+                margin-right: 10px; position: relative; vertical-align: top; width: 40px!important;
+                ._img_us{  position: absolute; border-radius: 200px; -moz-border-radius: 200px; -webkit-border-radius: 200px; }
+            }
+
+            .img._img_onl_no{  filter: grayscale(100%)!important }
+            .chnl{ width: 15px; height: 15px; position: absolute; right: -3px; bottom: -3px; background-repeat: no-repeat; background-position: center center; background-size: cover; }
+
+            .chnl.eml{ background-image: url("../../../assets/imgs/icons/chat_eml_a.svg"); background-size: auto 75%; }
+            .chnl.whtsp{ background-image: url("../../../assets/imgs/icons/chat_whtsp_a.svg"); }
+            .chnl.fb{ background-image: url("../../../assets/imgs/icons/chat_fb_a.svg"); }
+            .chnl.ins{ background-image: url("../../../assets/imgs/icons/chat_ins_a.svg"); }
+            .chnl.sumr{ border-radius: 200px; -moz-border-radius: 200px; -webkit-border-radius: 200px; }
+
+        }
+
+        ._spn_tt{ font-size: 15px; }
+        ._spn_typ{ display: block!important; color: #9E9E9E; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        
+        ion-buttons{
+            text-align: right;
+            ion-label{
+                margin-right: 5px;
+                span{ display: block; width: 100%; font-size:11px; color: rgb(169, 172, 177); }
+                ion-badge{ --padding-bottom:3px; --padding-top:2px; --padding-start:4px; --padding-end:4px; font-size: 10px; font-weight: bolder; }
+            }
+        }
+    }
+}
+
+
+ion-thumbnail.empty{
+    
+    width: 100%; height: 200px; margin-top: 100px;
+   
+    .d_img{ 
+        width: 150px; height: 150px; background-image: url("../../../assets/imgs/chat_empty.svg"); background-size: 90% auto; background-position: center; background-repeat: no-repeat; margin: auto; box-shadow: none !important; opacity: 0.4;
+        img{ border: none !important; box-shadow: none !important; }
+    }
+
+    ion-label{ 
+        text-align: center; font-family: 'Economica'; font-weight: bold; display: block; width: 100%; text-transform: uppercase; font-size: 20px; opacity: 0.5;
+        span{ font-weight: normal; display: block; width: 100%; font-size: 11px; }
+    }
+
+    ion-button{ 
+        text-align: center; font-family: 'Economica'; font-weight: 300; text-transform: uppercase; font-size: 13px; margin-top:20px; --background:none; border: 1px solid rgb(68, 68, 68); color: rgb(68, 68, 68); border-radius:9px; -moz-border-radius:9px; -webkit-border-radius:9px;
+    }
+}

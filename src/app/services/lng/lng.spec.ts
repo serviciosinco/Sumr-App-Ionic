@@ -1,0 +1,1 @@
+import { LngProvider } from './lng';

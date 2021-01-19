@@ -1,0 +1,25 @@
+ion-header{
+    ion-toolbar{ 
+
+        --background:none; background-color: #23243d;
+
+        ion-menu-button{
+            --color:"#ffffff";
+        }
+
+        ion-title{ 
+            color: white;
+            figure{ width: 100%; height: 30px; background-repeat: no-repeat; background-position: center center; margin:0; padding: 0; } 
+        } 
+    }
+} 
+
+ion-buttons{ --color:white !important; color:white !important; }
+
+
+
+.rsmn ion-row ion-col{ text-align: center; }
+.rsmn ion-row ion-col ion-label{ width: 100%; }
+.rsmn ion-row ion-col span{ color:#ccc; font-size: 0.8em; width: 100%; display: block; }
+
+.grph{ display: block; position: relative; }

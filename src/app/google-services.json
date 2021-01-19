@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "511632056976",
+    "firebase_url": "https://sumr-app-98d03.firebaseio.com",
+    "project_id": "sumr-app-98d03",
+    "storage_bucket": "sumr-app-98d03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511632056976:android:43b791c722a6a4de",
+        "android_client_info": {
+          "package_name": "com.servicios.in.sumr.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511632056976-c9so9pors2gv2i28dh8kht44a8oc4uft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR-WXdV1ir3a7fWuMOlEbY0y3mP_djhDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511632056976-c9so9pors2gv2i28dh8kht44a8oc4uft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

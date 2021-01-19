@@ -1,0 +1,24 @@
+.sumr-detail{ --background: none; background-image: url('../../../assets/imgs/login_back.svg'); background-color: #23243d; background-repeat: no-repeat;  background-size: 700px auto; background-position: bottom center; --padding-start:15%; --padding-end:15%; }
+.sumr-detail .sumr-btn{ width: 100%; --background: #7c2354; text-transform: lowercase; }
+.sumr-detail .sumr-logo{ --background: none; background-image: url("../../../assets/imgs/logo_w.svg"); width: 300px; height: 100px; background-repeat: no-repeat; background-position: center; margin: auto; display: block; margin-top: 100px; margin-bottom: 50px; }
+
+
+ion-grid{ background-color: transparent; }
+ion-input{ --background:none; text-align:center; --placeholder-color: rgba(255, 255, 255, 0.7); --placeholder-text-align:center; text-transform: lowercase; }
+ion-item ion-icon{ font-size: 18px; opacity: 0.5; }
+
+
+
+ion-item {
+    --border-top-width: 1px;
+    --border-end-width: 1px;
+    --border-bottom-width: 1px;
+    --border-start-width: 1px;
+    --border-width: var(--border-top-width) var(--border-end-width) var(--border-bottom-width) var(--border-start-width);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --background: #00000091; --color: #fff; --border-radius: 10px; margin-bottom: 20px;
+    --highlight-color-focused: none;
+    --background-activated:none;
+    --background-focused:none;
+    --background-hover:none;
+}

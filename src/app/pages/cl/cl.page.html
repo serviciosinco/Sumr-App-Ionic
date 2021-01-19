@@ -1,0 +1,16 @@
+<ion-content padding class="sumr-accounts-list sumr-c-page cards-bg">
+  <figure class="sumr-logo"></figure>
+  <ion-text color="medium">
+      <h1>{{'account.select'|translate}}</h1>
+  </ion-text>
+  <ion-list [ngClass]="[ _Cl.main.ldn=='ok'?'_ld':'' ]">
+    <ion-item *ngFor="let _cl of _Cl.main.ls" lines="none" (click)="_Cl._Go({ cl:_cl })" class="_anm animated" [ngClass]="[ _cl.hde=='ok'?'_hde fadeOutUp faster':'', _cl.ldn=='ok'?'_ld_o':'' ]" item-content text-wrap>
+      <ion-chip>
+        <ion-avatar [style.border]="'2px solid'+ _cl.clr " >
+          <figure [style.backgroundImage]="'url(' + _cl.img + ')'"></figure>
+        </ion-avatar>
+        <ion-label text-wrap >{{ _cl.nm }}</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-content>

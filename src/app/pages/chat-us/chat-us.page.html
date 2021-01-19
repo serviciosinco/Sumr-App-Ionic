@@ -1,0 +1,29 @@
+<ion-header no-shadow no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Contactos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="cards-bg">
+    <ion-searchbar placeholder="buscar" value="" (ionInput)="getItems({'tt':$event})" animated></ion-searchbar>
+    <ion-list class="us">
+      <ion-item *ngFor="let item of items" (click)="_Slc_Us(item)">
+        <ion-avatar item-start slot="start">
+          <div class="img _img_onl_ok">
+            <img src="{{ this._fnc._Ld_Img(item.img) }}" (click)="_Img_View(item.img)" class="_img_us">
+          </div>
+          
+          <div class="chnl sumr" *ngIf="(item.onl == 'ok')"></div>
+        </ion-avatar> 
+        <div class="_spn_div">
+          <span class="_spn_tt">{{ item.nm+" "+item.ap }}</span>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

@@ -1,0 +1,50 @@
+{
+  "login":{
+    "user":"User",
+    "password":"Password",
+    "enter":"Enter"
+  },
+  "account":{
+    "select":"Select Account"
+  },
+  "menu":{
+    "title":"Menu",
+    "dashboard":"Dashboard",
+    "mdl-cnt":"Leads",
+    "chat":"Chat",
+    "tasks":"Tasks",
+    "schedule":"Schedule",
+    "setup":"Setup"
+  },
+
+  "swal":{
+    "aysure":"Are You Sure",
+    "clchange":"Deseas cambiar de cliente?",
+    "closesession":"Deseas cerrar sesión?"
+  },
+
+  "conversations":{
+    "title":"Conversaciones",
+    "chnl_nobuy":"Tu plan no tiene habilitado este canal.",
+    "chnl_nocnv_tt":"NO HAY MENSAJES",
+    "chnl_nocnv_dsc":"No has recibido aun mensajes",
+    "msg_nosnd":"No pudimos enviar tu mensaje, intenta de nuevo",
+    "msg_rcnt":"Reciente..."
+  },
+
+  "leads":{
+    "title":"Leads",
+    "chnl_nobuy":"Tu plan no tiene habilitado este canal.",
+    "chnl_nocnv_tt":"NO HAY MENSAJES",
+    "chnl_nocnv_dsc":"No has recibido aun mensajes"
+  },
+  
+  "writing":"Escribiendo...",
+  "show_contact":"Pulsa para ver la info del contacto...",
+  "write_message":"Escribe un mensaje",
+
+  "update":"Actualizar",
+  "contacts":"Contactos",
+  "noicnx":"No hay conexión a internet"
+
+}

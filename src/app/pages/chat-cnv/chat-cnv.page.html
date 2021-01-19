@@ -1,0 +1,68 @@
+<ion-header [ngClass]="!this._fnc.isN(gd.cnv) && !this._fnc.isN(gd.cnv.chnl) ? gd.cnv.chnl : '' " no-shadow no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="this.gd.set_var_cnv()">
+      <ion-back-button [text]="23" defaultHref="/menu/chat"></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <figure [style.backgroundImage]="'url(' + _fnc._Ld_Img(vget.us.img) + ')'"></figure>
+    </ion-avatar>
+    <ion-title class="ion-text-left">
+      <div class="title">{{ vget.us.nm+" "+vget.us.ap }}</div>
+      <div class="subtitle">{{ ( ( this.gd.chat.wrt[ this.gd.cnv.chnl ][ vget.cnv.enc ] == 'ok') ? _lng.get("writing") : _lng.get("show_contact") ) }}</div>
+    </ion-title>
+    <ion-buttons slot="end">
+        <ion-button class="opt" slot="icon-only" (click)="cnv_opt()"></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content class="cmain {{ gd.cnv.chnl }}" [scrollEvents]="true">
+  
+  <!--
+  <ion-refresher slot="fixed" (ionRefresh)="gd.bld_msg_rfrsh({ ldr:'no', evn:$event })">
+    <ion-refresher-content refreshingSpinner="crescent" pullingIcon="md-refresh-circle"></ion-refresher-content>
+  </ion-refresher>
+  -->
+
+  <ion-grid *ngIf="!this._fnc.isN( this.gd.cnv.msg_s )">
+    <ion-row *ngFor="let msg of this.gd.cnv.msg_s">
+      <!--<ion-col [ngClass]="( msg.me!='ok' ? '_msj_oth' : '_msj_my' )+' '+msg.cls+' '+( )  " >-->
+      <ion-col  *ngIf="!this._fnc.isN(msg) && !this._fnc.isN(msg.enc)" 
+                [ngClass]="[ 
+                            !this._fnc.isN(msg.me) && msg.me!='ok' ? ' _msj_oth ' : ' _msj_my ',
+                            !this._fnc.isN(msg.glast) && msg.glast=='ok' ?'_glast':'',  
+                            msg.snt == 'ok' ? ' _msj_rdy ' : ' _msj_prc ' 
+                          ]"
+                id="msg-{{ msg.enc }}" >
+        <div class="wrp">
+            <div class="crnr"></div>
+            <div class="txt" *ngIf="!this._fnc.isN(msg) && !this._fnc.isN(msg.tx)">{{ msg.tx }}</div>
+            <div class="hour" *ngIf="!this._fnc.isN(msg) && !this._fnc.isN(msg.f) && !this._fnc.isN(msg.f.s1) ">{{ msg.f.s1 }}</div>
+            <div class="sts"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-label id="_Scroll_Btm">&nbsp;</ion-label>
+
+  <ion-thumbnail *ngIf="this._fnc.isN(messages)" [ngClass]="this.gd.cnv.rqu.err=='ok'?'show':''" class="empty" no-shadow no-border>
+    <div class="d_img"></div>
+    <ion-label>
+      {{'conversations.chnl_nocnv_tt' | translate}}
+      <span>{{'conversations.chnl_nocnv_dsc' | translate}}</span>
+      <ion-button (click)="_Rq_Get_This()">{{'update' | translate }}</ion-button>
+    </ion-label>
+  </ion-thumbnail>
+  
+</ion-content>
+  
+<ion-footer class="{{ gd.cnv.chnl }}" position="floating" no-border>
+  <ion-toolbar no-shadow no-border>
+      <ion-textarea auto-grow="true" rows="1" no-border placeholder="{{'write_message'|translate}}" (ionInput)="_K_Prss($event)" (keypress)="_Snd_Msj_Tx($event.keyCode);" [(ngModel)]="cnvrmsj_msj" value="cnvrmsj_msj"></ion-textarea>
+      <ion-buttons slot="end">
+        <ion-button (click)="_Snd_Msj()">
+          <ion-icon name="send" color="light"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

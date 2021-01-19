@@ -1,0 +1,81 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{'conversations.title'|translate}}
+    </ion-title>
+    <ion-buttons slot="end" class="opt">
+      <ion-button (click)="showSearch()" class="sch">
+      </ion-button>
+      <ion-button (click)="showNew()"class="new">
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="cards-bg sumr-c-page">
+  <!--<ion-button (click)="ChkClss()">Button</ion-button>-->
+ 
+  <ion-refresher slot="fixed" (ionRefresh)="_Rfsh_Ls({ ldr:'no', evn:$event })">
+    <ion-refresher-content refreshingSpinner="crescent" pullingIcon="md-refresh-circle"></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid class="chnl animated fadeInDown fast">
+    <ion-row>
+      <ion-col class="ion-align-items-center empty"></ion-col>      
+      <ion-col *ngFor="let chnl of this.gd.chat.channels" class="ion-align-items-center {{ chnl.cls }}" (click)="filterChnl(chnl)" [ngClass]="chnl.active?'active':''">
+        <div class="opt" [style.backgroundImage]="'url(' + ( !this._fnc.isN(chnl.img) ? chnl.img : '')  + ')'">
+          <ion-badge color="secondary" slot="end" mode="ios">220</ion-badge>
+        </div> 
+      </ion-col>
+      <ion-col class="ion-align-items-center empty"></ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="buy">
+    <ion-row >
+      <ion-col class="ion-align-items-center">{{'conversations.chnl_nobuy'|translate}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-searchbar *ngIf="this.gd.chat.sch" placeholder="buscar" value="" (ionInput)="getItems({'tt':$event})" animated></ion-searchbar>
+
+  <ion-list class="cnv" *ngIf="!this._fnc.isN( this.gd.chat.cnv_s )">
+      <ion-item *ngFor="let cnv of this.gd.chat.cnv_s" (click)="cnv_go(cnv)"> 
+        <ion-reorder slot="start"></ion-reorder> 
+        <ion-avatar item-start slot="start">
+          <div class="img _img_onl_{{ cnv.us.onl }}">
+            <img src="{{ this._fnc._Ld_Img(cnv.us.img) }}" (click)="_Img_View(cnv.us.img)" class="_img_us">
+            <div class="_onl"></div>
+          </div>
+          <div class="chnl {{ cnv.tp.cls }}" [style.backgroundImage]="'url(' + ( cnv.tp.cls=='sumr' ? this.gd.cl.logo:'' ) + ')'"></div>
+        </ion-avatar>
+        
+        <div class="_spn_div">
+          <span class="_spn_tt">{{ cnv.us.nm+" "+cnv.us.ap }}</span>
+          <span id="_spn_typ_{{ cnv.cnv.enc }}" class="_spn_typ">{{  ( this.gd.chat.wrt[ cnv.tp.cls ][cnv.cnv.enc] == 'ok') ? this._lng.get("writing") : cnv.msj_lst.tx  }}</span>
+        </div>
+
+        <ion-buttons slot="end">
+          <ion-label *ngIf="!this._fnc.isN( cnv.msj_lst )">
+            <span>{{ cnv.msj_lst.f.s1 }}</span>
+            <ion-badge class="_msj_count" color="secondary" slot="end" mode="ios" *ngIf="cnv.msj_lst.tot > 0">{{ cnv.msj_lst.tot }}</ion-badge>
+          </ion-label>
+          <ion-icon slot="icon-only" name="ios-arrow-forward"></ion-icon>
+        </ion-buttons>
+      </ion-item>
+    <!--</ion-reorder-group>-->
+  </ion-list>
+
+  <ion-thumbnail *ngIf="this._fnc.isN(this.gd.chat.cnv_s)" class="empty" no-shadow no-border>
+    <div class="d_img"></div>
+    <ion-label>
+      {{'conversations.chnl_nocnv_tt'|translate}}
+      <span>{{'conversations.chnl_nocnv_dsc'|translate}}</span>
+      <ion-button (click)="bld_cnv_start()">{{'update' | translate }}</ion-button>
+    </ion-label>
+  </ion-thumbnail>
+
+</ion-content>

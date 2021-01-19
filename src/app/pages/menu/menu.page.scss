@@ -1,0 +1,59 @@
+ion-header{ 
+    border-bottom: 1px solid #93918f; 
+
+    ion-avatar{ 
+        width: 40px; height: 40px; background-size: cover; position: relative; margin-right: 10px; 
+        
+        ion-avatar figure{ 
+            width: 17px; height: 17px; margin:0; padding:0; position: absolute; background-size: cover; background-position: center center; bottom: -4px; left: -5px;
+            border-radius:200px; -moz-border-radius:200px; -webkit-border-radius:200px; 
+        }
+    }
+
+}
+
+
+
+ion-list{ 
+    ion-label{ margin-left: 10px; }
+    ion-icon{ background-position: center center; background-repeat: no-repeat; }
+    ion-icon.dsh{ background-image: url("../../../assets/imgs/icons/menu_dashboard.svg"); }
+    ion-icon.mdl-cnt{ background-image: url("../../../assets/imgs/icons/menu_mdl_cnt.svg"); }
+    ion-icon.chat{ background-image: url("../../../assets/imgs/icons/menu_chat.svg"); }
+    ion-icon.tra{ background-image: url("../../../assets/imgs/icons/menu_tra.svg"); }
+    ion-icon.agnd{ background-image: url("../../../assets/imgs/icons/menu_agnd.svg"); }
+}
+
+ion-footer{
+    ion-buttons{
+        ion-button{ background-position: center center; background-size: auto 80%; background-repeat: no-repeat; width: 40px; height: 40px; }
+
+        ion-button:hover{ background-color: transparent !important; }
+        ion-button.rnd{ width: 40px; height: 40px; border-radius:200px; -moz-border-radius:200px; -webkit-border-radius:200px; background-color: rgb(217, 218, 228); background-size: auto 40%; opacity: 0.4; }
+        ion-button.stup{ background-image: url("../../../assets/imgs/icons/menu_opt_stup.svg"); }
+        ion-button.cl{ background-image: url("../../../assets/imgs/icons/menu_opt_cl.svg"); }
+        ion-button.cls{ background-image: url("../../../assets/imgs/icons/menu_opt_cls.svg"); }
+        ion-label{ font-size: 0.9em; }       
+    }
+}
+
+ion-list{
+
+    ion-badge{ --padding-top:5px; --padding-bottom:5px; --padding-start:5px; --padding-end:5px; font-size: 9px; text-align: center; }
+
+    ion-menu-toggle{
+
+        ion-item{ 
+            --padding-top:6px; --padding-bottom:0px; 
+            ion-label,
+            ion-icon{ opacity: 0.4; }
+        }
+
+        ion-item.active-item,
+        ion-item.active-item ion-label{ --ion-text-color: var(--ion-color-secondary);  }
+
+        ion-item.active-item ion-label,
+        ion-item.active-item ion-icon{ opacity: 1; }
+
+    }
+} 

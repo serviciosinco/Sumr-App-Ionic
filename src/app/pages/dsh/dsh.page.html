@@ -1,0 +1,66 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar [style.background-color]="_cl_clr">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+        <figure [style.backgroundImage]="'url(' + this._cl_img + ')'"></figure>
+    </ion-title>   
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+
+  <ion-refresher slot="fixed">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid class="rsmn">
+    <ion-row>
+      <ion-col class="ion-align-items-center">
+        <ion-label fixed>20</ion-label>
+        <span>Leads Hoy</span>
+      </ion-col>
+      <ion-col class="ion-align-items-center">
+        <ion-label fixed>100</ion-label>
+        <span>Leads Mes</span>
+      </ion-col>
+      <ion-col class="ion-align-items-center">
+        <ion-label fixed>1278</ion-label>
+        <span>Leads Año</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-slides>
+    <ion-slide>
+        <div id="graph_1" style="width:100%; height:300px;" class="grph"></div>
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-grid class="rsmn">
+    <ion-row>
+      <ion-col class="ion-align-items-center">
+        <div id="graph_2" style="width:100%; height:100px;" class="grph"></div>
+        <span>Leads Hoy</span>
+      </ion-col>
+      <ion-col class="ion-align-items-center">
+        <div id="graph_3" style="width:100%; height:100px;" class="grph"></div>
+        <span>Leads Mes</span>
+      </ion-col>
+      <ion-col class="ion-align-items-center">
+        <div id="graph_4" style="width:100%; height:100px;" class="grph"></div>
+        <span>Leads Año</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+  

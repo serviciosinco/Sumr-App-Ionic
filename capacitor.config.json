@@ -1,0 +1,13 @@
+{
+  "appId": "sumrcrm.servicios.in",
+  "appName": "SUMR",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "Keyboard": {
+      "resize": "body",
+      "style": "dark"
+    }
+  }
+}

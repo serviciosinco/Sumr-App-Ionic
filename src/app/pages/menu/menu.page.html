@@ -1,0 +1,42 @@
+<ion-split-pane >
+  <ion-menu contentId="content">   
+    <ion-header no-shadow no-border>
+      <ion-toolbar no-shadow>
+        <ion-title>{{'menu.title'|translate}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-avatar [style.border]="'1px solid #ccc'" [style.backgroundImage]="'url(' + _mnu_img + ')'" end>
+            <figure [style.backgroundImage]="'url(' + _cl_img + ')'"></figure>
+          </ion-avatar>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="sumr-c-page">
+
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let itm of pages">
+          <ion-item [class.active-item]="selectedPath == itm.url || ( selectedPath == '' && itm.k == 'dsh') " (click)="ShwPge(itm)" >
+            <ion-icon item-left class="{{ itm.icon }}"></ion-icon>
+            <ion-label>{{ itm.nm | translate }}</ion-label>
+            <ion-badge color="secondary" slot="end" mode="ios">10</ion-badge>
+            <!--<ion-badge *ngIf="n" color="secondary" slot="end" mode="ios">10</ion-badge>-->
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      
+    </ion-content>
+
+    <ion-footer [style.backgroundColor]="'#ccc'">
+      <ion-toolbar>
+          <ion-buttons slot="start" *ngFor="let opt of option" slot="{{ opt.slot }}">
+            <ion-button (click)="ShwPge(opt)" class="{{ opt.icon }}"></ion-button>
+            <ion-label *ngIf="opt.nm != '' && opt.nm != null">{{ opt.nm | translate }}</ion-label>
+          </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+
+  </ion-menu>
+  
+  <ion-router-outlet id="content" main></ion-router-outlet>
+
+</ion-split-pane>

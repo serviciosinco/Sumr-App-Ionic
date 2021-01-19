@@ -1,0 +1,58 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Listado Leads
+    </ion-title>
+    <ion-buttons slot="end" class="opt">
+      <ion-button (click)="_ShwSrch()" class="sch">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content class="cards-bg sumr-c-page">
+  <!--<ion-button (click)="ChkClss()">Button</ion-button>-->
+
+  <ion-grid class="chnl animated fadeInDown fast">
+    <ion-row>
+      <ion-col class="ion-align-items-center empty"></ion-col>      
+      <ion-col *ngFor="let chnl of _mdl_cnt.channels" class="ion-align-items-center {{ chnl.cls }}" (click)="filterChnl(chnl)" [ngClass]="chnl.active?'active':''">
+        <div class="opt" [style.backgroundImage]="'url(' + (chnl.img != '' && chnl.img != null ? chnl.img : '')  + ')'">
+          <ion-badge color="secondary" slot="end" mode="ios">220</ion-badge>
+        </div> 
+      </ion-col>
+      <ion-col class="ion-align-items-center empty"></ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-searchbar #sch *ngIf="this._mdl_cnt._sch_shw" autofocus="true" placeholder="buscar" value="" debounce="1000" (ionChange)="getItems({'tt':$event})" animated></ion-searchbar>
+
+  <ion-list class="cnv" *ngIf="!this._fnc.isN(_mdl_cnt.ls_itms)">
+      <ion-item *ngFor="let item of _mdl_cnt.ls_itms" (click)="_Slc_Mdl_Cnt(item)"> 
+      <!--<ion-item *ngFor="let item of _mdl_cnt.ls_itms | filters: _mdl_cnt._sch_tt: 'cnt_nm' : 'cnt_ap'" (click)="_Slc_Mdl_Cnt(item)">-->
+        <ion-reorder slot="start"></ion-reorder>
+        <div class="_spn_div">
+          <span class="_spn_tt">{{ item.cnt_nm+' '+item.cnt_ap }}</span>
+          <span class="_spn_typ">{{ item.est_tt }}</span>
+        </div>
+
+        <ion-buttons slot="end">
+          <ion-label>
+            <span>{{ item.fi }}</span>
+          </ion-label>
+          <ion-icon slot="icon-only" name="ios-arrow-forward"></ion-icon>
+        </ion-buttons>
+      </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="getItemsNew($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando datos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
