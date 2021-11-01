@@ -3,9 +3,9 @@ export const Environment = {
   API_ENDPOINT: 'https://api.sumrdev.com/app/',
   WS_ENDPOINT: 'wss://ws.sumrdev.com/',
   SUMR_TOKEN:{
-    a:'zqPZWZ7Pre',
-    k:'b2c8aeda2bc8adc231272bac69b0117cd528e4bf',
-    p:'010662a4cdd1271dc2c1bde883afe3044719a26c',
-    u:'news@sumr.co'
+    a:'1a179b6a03',
+    k:'bd9945b8a30e47202fa3a7ad06dbeac6bb4f5824',
+    p:'e1d15d37ee174e4caccd866524ca31ca14629343',
+    u:'icgarzon@servicios.in'
   }
 };

@@ -103,7 +103,8 @@
       "com-sarriaroman-photoviewer": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "ios"
     ]
   }
 }
